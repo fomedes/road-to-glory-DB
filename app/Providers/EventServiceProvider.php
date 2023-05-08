@@ -25,7 +25,11 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Event::listen(StatementPrepared::class, function($event) {
+            /** @var StatementPrepared $event */
+            $event->statement->setFetchMode(\PDO::FETCH_ASSOC);
+        });
+
     }
 
     /**

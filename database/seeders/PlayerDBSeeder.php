@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Player;
 
-class Player_dbTableSeeder extends Seeder
+class PlayerDBSeeder extends Seeder
 {
     /**
      * Run the database seeds.
