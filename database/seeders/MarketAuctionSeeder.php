@@ -5,23 +5,18 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
-use App\Models\MarketSettings;
+use App\Models\MarketAuction;
 use Carbon\Carbon;
 
-class MarketSettingsSeeder extends Seeder
+class MarketAuctionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        MarketSettings::Create([
+        MarketAuction::Create([
             'community' => 1,
-            'minimum_overall' => 70,
-            'maximum_overall' => 77,
-            'market_duration' => 1,
-            'start_date' => Carbon::now(),
-            'end_date' => Carbon::now()->addMinutes(1),
         ]);
         }    
 }

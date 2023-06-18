@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'userId';
     protected $table = 'users';
 
     /**
@@ -24,6 +25,8 @@ class User extends Authenticatable
         'platform',
         'email',
         'password',
+        'funds',
+        'club_players'
     ];
 
     /**

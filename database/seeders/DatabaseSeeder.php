@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PlayerDBSeeder::class);
         $this->call(PlayerPricesSeeder::class); 
         $this->call(MarketSettingsSeeder::class); 
-
+        $this->call(MarketAuctionSeeder::class); 
     }
 }
