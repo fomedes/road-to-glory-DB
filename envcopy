@@ -1,8 +1,8 @@
-APP_NAME=Laravel
-APP_ENV=local
+APP_NAME=RoadToGlory
+APP_ENV=development
 APP_KEY=base64:wrqUlYggQfA1OVLd14XykEfe19FghVMvW/+XOsvfwjI=
-APP_DEBUG=true
-APP_URL=http://localhost
+APP_DEBUG=false
+APP_URL=https://road-to-glory.fly.dev/
 
 LOG_CHANNEL=stack
 LOG_DEPRECATIONS_CHANNEL=null
@@ -10,10 +10,12 @@ LOG_LEVEL=debug
 
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=road-to-glory
+DB_PORT=5433
+DB_DATABASE=postgres
 DB_USERNAME=postgres
-DB_PASSWORD=root
+DB_PASSWORD=IZc8HXep4IOzS01
+DB_SSLMODE=require
+DB_CONNECTION_STRING=postgres://postgres:IZc8HXep4IOzS01@road-to-glory-postgres.flycast:5432
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
