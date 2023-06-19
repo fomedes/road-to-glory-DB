@@ -12,9 +12,9 @@ class Transfer extends Model
     
     protected $fillable = [
       'player_id', 
-      'bidding_club', 
-      'bidding_amount', 
-      'bidding_date', 
+      'club', 
+      'amount', 
+      'date', 
       'move_type'
     ];
 }

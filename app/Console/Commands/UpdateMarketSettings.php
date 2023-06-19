@@ -119,20 +119,20 @@ class UpdateMarketSettings extends Command
                 if ($winnerBid === null) {
                     $winnerBid = [
                         'player_id' => $playerId,
-                        'bidding_club' => $biddingClub,
-                        'bidding_amount' => $biddingAmount,
-                        'bidding_date' => $biddingDate,
+                        'club' => $biddingClub,
+                        'amount' => $biddingAmount,
+                        'date' => $biddingDate,
                         'move_type' => 'purchase'
                     ];
                 } else {
-                    $currentAmount = $winnerBid['bidding_amount'];
+                    $currentAmount = $winnerBid['amount'];
 
                     if ($biddingAmount > $currentAmount) {
                         $winnerBid = [
                             'player_id' => $playerId,
-                            'bidding_club' => $biddingClub,
-                            'bidding_amount' => $biddingAmount,
-                            'bidding_date' => $biddingDate,
+                            'club' => $biddingClub,
+                            'amount' => $biddingAmount,
+                            'date' => $biddingDate,
                             'move_type' => 'purchase'
                         ];
                     }

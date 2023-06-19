@@ -32,8 +32,12 @@ Route::get('prices', [PlayerPricesController::class, 'index']);
 
 Route::get('market', [MarketSettingsController::class, 'index']);
 
+
 Route::get('auction', [MarketAuctionController::class, 'index']);
 Route::post('auction', [MarketAuctionController::class, 'store']);
+
+Route::post('sale', [MarketSaleController::class, 'store']);
+
 
 
 

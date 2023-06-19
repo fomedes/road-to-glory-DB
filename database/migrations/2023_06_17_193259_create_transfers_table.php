@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
             $table->integer('player_id');
-            $table->string('bidding_club');
-            $table->unsignedInteger('bidding_amount');
-            $table->timestamp('bidding_date')->nullable();
+            $table->string('lub');
+            $table->unsignedInteger('mount');
+            $table->timestamp('date')->nullable();
             $table->string('move_type')->nullable();
             $table->timestamps();
         });
