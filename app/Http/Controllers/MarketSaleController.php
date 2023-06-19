@@ -37,8 +37,8 @@ class MarketSaleController extends Controller
                 ];
 
                 // Store the sold player data
-//                Transfer::insert($soldPlayer);
-/*
+    //                Transfer::insert($soldPlayer);
+    /*
                 // Add sold player amount to funds
                 $this->addFunds($soldPlayer);
                 // Remove player from user
@@ -47,13 +47,15 @@ class MarketSaleController extends Controller
                 $this->updatePlayerCurrentClub($soldPlayer);
                 // Mark player as not a free agent
                 $this->markPlayerFreeAgent($soldPlayer);
-*/              
+                  
 
                 return response()->json(['message' => 'Player sold successfully'], 200);
-
+*/
           }
         }
-        return response()->json(['message' => 'Player not found'], 404);
+        return response()->json(['message' => $soldPlayer], 200);
+
+        //return response()->json(['message' => 'Player not found'], 404);
     }    
 
     private function addFunds($soldPlayer)
