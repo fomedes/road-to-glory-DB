@@ -51,9 +51,9 @@ class MarketSaleController extends Controller
 
                 return response()->json(['message' => 'Player sold successfully'], 200);
 */
-          }
+            }
         }
-        return response()->json(['message' => $soldPlayer], 200);
+        return response()->json(['message' => $clubPlayers], 200);
 
         //return response()->json(['message' => 'Player not found'], 404);
     }    
