@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
 
 
-
 class MarketSaleController extends Controller
+
 {
     public function store(Request $request)
     {
@@ -34,7 +34,6 @@ class MarketSaleController extends Controller
               ];
 
               // Store the sold player data
-              // Assuming you have a model named SoldPlayer to store the sold player information
               Transfer::insert($soldPlayer);
 
               return response()->json(['message' => 'Player sold successfully'], 200);
