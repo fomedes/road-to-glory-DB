@@ -18,10 +18,10 @@ class MarketSaleController extends Controller
         $sellingDate = $request->input('selling_date');
 
         $clubPlayers = DB::table('users')
-        ->where('userId', $sellingAmount)
+        ->where('userId', 1)
         ->value('club_players');
 
-        return response()->json(['message' => $sellingClub], 200);
+        return response()->json(['message' => $clubPlayers], 200);
 
         if ($clubPlayers) {
           $playerIds = json_decode($clubPlayers);
