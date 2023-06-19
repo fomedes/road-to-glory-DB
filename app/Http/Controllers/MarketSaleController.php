@@ -23,7 +23,7 @@ class MarketSaleController extends Controller
 
         if ($clubPlayers) {
           $playerIds = json_decode($clubPlayers);
-
+/*
           if (in_array($playerId, $playerIds)) {
               $soldPlayer = [
                   'player_id' => $playerId,
@@ -32,13 +32,13 @@ class MarketSaleController extends Controller
                   'date' => $sellingDate,
                   'move_type' => 'sale'
               ];
-
+*/
               // Store the sold player data
-              Transfer::insert($soldPlayer);
+              //Transfer::insert($soldPlayer);
 
               return response()->json(['message' => 'Player sold successfully'], 200);
           }
         }
-        return response()->json(['message' => 'Player not found'], 404);
+       // return response()->json(['message' => 'Player not found'], 404);
     }    
-}
+
