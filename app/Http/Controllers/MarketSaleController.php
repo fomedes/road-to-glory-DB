@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
+use App\Models\User;
+
 
 
 class MarketSaleController extends Controller
@@ -13,7 +15,7 @@ class MarketSaleController extends Controller
     {
 
         $playerId = $request->input('player_id');
-        $sellingClub = 1;
+        $sellingClub = $request->input('selling_club');
         $sellingAmount = $request->input('selling_amount');
         $sellingDate = $request->input('selling_date');
 
@@ -21,7 +23,7 @@ class MarketSaleController extends Controller
         ->where('userId', $sellingClub)
         ->value('club_players');
 
-        return response()->json(['message' => $clubPlayers], 200);
+        return response()->json(['message' => $request], 200);
 
         if ($clubPlayers) {
           $playerIds = json_decode($clubPlayers);
