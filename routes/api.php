@@ -7,6 +7,7 @@ use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PlayerPricesController;
 use App\Http\Controllers\MarketSettingsController;
 use App\Http\Controllers\MarketAuctionController;
+use App\Http\Controllers\MarketSaleController;
 
 use App\Http\Controllers\UserController;
 
