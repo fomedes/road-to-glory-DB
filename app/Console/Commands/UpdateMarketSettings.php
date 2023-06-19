@@ -53,7 +53,7 @@ class UpdateMarketSettings extends Command
             $start = Carbon::now('Europe/London');
             $end = Carbon::now('Europe/London');
             $settings->start_date = $start;
-            $settings->end_date = $end->addMinutes(1);
+            $settings->end_date = $end->addMinutes(10);
             $settings->save();
     
             return true;
