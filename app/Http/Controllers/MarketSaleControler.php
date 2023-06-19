@@ -21,8 +21,6 @@ class MarketSaleController extends Controller
         ->where('userID', $sellingClub)
         ->value('club_players');
 
-
-
         if ($clubPlayers) {
           $playerIds = json_decode($clubPlayers);
 
@@ -41,31 +39,7 @@ class MarketSaleController extends Controller
 
               return response()->json(['message' => 'Player sold successfully'], 200);
           }
-      }
-
-      return response()->json(['message' => 'Player not found'], 404);
-  }
-    
-
-    private function findPlayerIndex($selectedPlayers, $playerId)
-    {
-        foreach ($selectedPlayers as $index => $player) {
-            if ($player['player_id'] === $playerId) {
-                return $index;
-            }
         }
-
-        return -1;
-    }
-
-    private function findSellingClubIndex($bids, $sellingClub)
-    {
-        foreach ($bids as $index => $bid) {
-            if ($bid['sellingClub'] === $sellingClub) {
-                return $index;
-            }
-        }
-
-        return -1;
-    }
-  }
+        return response()->json(['message' => 'Player not found'], 404);
+    }    
+}
