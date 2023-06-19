@@ -20,6 +20,7 @@ class MarketSaleController extends Controller
         $clubPlayers = DB::table('users')
         ->where('userId', $sellingClub)
         ->value('club_players');
+        return response()->json(['message' => 'Player sold successfully'], 200);
 
         if ($clubPlayers) {
           $playerIds = json_decode($clubPlayers);
@@ -36,7 +37,6 @@ class MarketSaleController extends Controller
               // Store the sold player data
               //Transfer::insert($soldPlayer);
 
-              return response()->json(['message' => 'Player sold successfully'], 200);
           }
         }
        // return response()->json(['message' => 'Player not found'], 404);
