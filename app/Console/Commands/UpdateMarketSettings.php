@@ -87,7 +87,7 @@ class UpdateMarketSettings extends Command
                 if (!empty($finalBids)) {
                     // Store the finalBids in the transfers table
                     Transfer::insert($finalBids);
-
+                    
                      foreach ($finalBids as $bid) {
                         // Deduct bid amount from funds
                         $this->deductFunds($bid);
@@ -164,8 +164,8 @@ class UpdateMarketSettings extends Command
 
     private function deductFunds($bid)
     {
-        $biddingClub = $bid['bidding_club'];
-        $biddingAmount = $bid['bidding_amount'];
+        $biddingClub = $bid['club'];
+        $biddingAmount = $bid['amount'];
 
         $user = User::where('userId', $biddingClub)->first();
         if ($user) {
@@ -176,7 +176,7 @@ class UpdateMarketSettings extends Command
 
     private function addPlayerToClub($bid)
     {
-        $biddingClub = $bid['bidding_club'];
+        $biddingClub = $bid['club'];
         $playerId = $bid['player_id'];
 
         $user = User::where('userId', $biddingClub)->first();
@@ -191,7 +191,7 @@ class UpdateMarketSettings extends Command
     private function updatePlayerCurrentClub($bid)
 {
     $playerId = $bid['player_id'];
-    $biddingClub = $bid['bidding_club'];
+    $biddingClub = $bid['club'];
 
     $user = User::where('userId', $biddingClub)->first();
     if ($user) {
