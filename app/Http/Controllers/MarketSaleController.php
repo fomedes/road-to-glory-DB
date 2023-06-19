@@ -23,7 +23,7 @@ class MarketSaleController extends Controller
         ->where('userId', $sellingClub)
         ->value('club_players');
 
-        return response()->json(['message' => $request->input('player_id')], 200);
+        return response()->json(['message' => $request->input('selling_amount')], 200);
 
         if ($clubPlayers) {
           $playerIds = json_decode($clubPlayers);
