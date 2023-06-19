@@ -27,7 +27,7 @@ class MarketSaleController extends Controller
         if ($clubPlayers) {
           $playerIds = json_decode($clubPlayers);
 
-          return response()->json(['message' => $clubPlayers], 200);
+          return response()->json(['message' => $playerIds], 200);
 
 /*
           if (in_array($playerId, $playerIds)) {
