@@ -38,7 +38,7 @@ class MarketSaleController extends Controller
 
               // Store the sold player data
               //Transfer::insert($soldPlayer);
-              return response()->json(['message' => $playerIds], 200);
+              return response()->json(['message' => $soldPlayer], 200);
 
           }
         }
