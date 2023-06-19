@@ -28,13 +28,13 @@ class MarketSaleController extends Controller
           $playerIds = json_decode($clubPlayers);
 
           if (in_array($playerId, $playerIds)) {
-              $soldPlayer = [
-                  'player_id' => $playerId,
-                  'club' => $sellingClub,
-                  'amount' => $sellingAmount,
-                  'date' => $sellingDate,
-                  'move_type' => 'sale'
-              ];
+                $soldPlayer = [
+                    'player_id' => $playerId,
+                    'club' => $sellingClub,
+                    'amount' => $sellingAmount,
+                    'date' => $sellingDate,
+                    'move_type' => 'sale'
+                ];
 
                 // Store the sold player data
                 Transfer::insert($soldPlayer);
