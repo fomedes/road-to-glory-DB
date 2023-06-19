@@ -27,9 +27,6 @@ class MarketSaleController extends Controller
         if ($clubPlayers) {
             $playerIds = json_decode($clubPlayers);
 
-            return response()->json(['message' => $playerIds], 200);
-
-
             if (in_array($playerId, $playerIds)) {
                 $soldPlayer = [
                     'player_id' => $playerId,
@@ -51,9 +48,9 @@ class MarketSaleController extends Controller
                 // Mark player as not a free agent
                 $this->markPlayerFreeAgent($soldPlayer);
                   
-
-                return response()->json(['message' => 'Player sold successfully'], 200);
 */
+                return response()->json(['message' => 'Player sold successfully'], 200);
+
           }
         }
         return response()->json(['message' => 'Player not found'], 404);
