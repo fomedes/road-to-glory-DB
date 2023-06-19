@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
 use App\Models\User;
 use App\Models\Player;
+use App\Models\Transfer;
+
 
 
 class MarketSaleController extends Controller
@@ -37,7 +39,7 @@ class MarketSaleController extends Controller
                 ];
 
                 // Store the sold player data
-    //                Transfer::insert($soldPlayer);
+                Transfer::insert($soldPlayer);
     
                 // Add sold player amount to funds
                 $this->addFunds($soldPlayer);
