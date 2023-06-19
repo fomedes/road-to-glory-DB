@@ -158,7 +158,7 @@ class UpdateMarketSettings extends Command
                 ];
             });
     
-        $auction->selected_players = json_encode($players);
+        $auction->selected_players = $players;
         $auction->save();
     }
 
