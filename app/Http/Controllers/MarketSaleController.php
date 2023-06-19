@@ -25,9 +25,9 @@ class MarketSaleController extends Controller
 
 
         if ($clubPlayers) {
-          $playerIds = json_decode($clubPlayers);
+            $playerIds = json_decode($clubPlayers);
 
-          if (in_array($playerId, $playerIds)) {
+            if (in_array($playerId, $playerIds)) {
                 $soldPlayer = [
                     'player_id' => $playerId,
                     'club' => $sellingClub,
@@ -38,7 +38,7 @@ class MarketSaleController extends Controller
 
                 // Store the sold player data
 //                Transfer::insert($soldPlayer);
-
+/*
                 // Add sold player amount to funds
                 $this->addFunds($soldPlayer);
                 // Remove player from user
@@ -47,9 +47,9 @@ class MarketSaleController extends Controller
                 $this->updatePlayerCurrentClub($soldPlayer);
                 // Mark player as not a free agent
                 $this->markPlayerFreeAgent($soldPlayer);
-              
+*/              
 
-              return response()->json(['message' => 'Player sold successfully'], 200);
+                return response()->json(['message' => 'Player sold successfully'], 200);
 
           }
         }
