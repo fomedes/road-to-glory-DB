@@ -13,12 +13,12 @@ class MarketSaleController extends Controller
     {
 
         $playerId = $request->input('player_id');
-        $sellingClub = $request->input('selling_club');
+        $sellingClub = 1;
         $sellingAmount = $request->input('selling_amount');
         $sellingDate = $request->input('selling_date');
 
         $clubPlayers = DB::table('users')
-        ->where('userId', 1)
+        ->where('userId', $sellingAmount)
         ->value('club_players');
 
         return response()->json(['message' => $clubPlayers], 200);
