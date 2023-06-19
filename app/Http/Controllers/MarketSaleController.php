@@ -38,7 +38,7 @@ class MarketSaleController extends Controller
 
                 // Store the sold player data
     //                Transfer::insert($soldPlayer);
-    /*
+    
                 // Add sold player amount to funds
                 $this->addFunds($soldPlayer);
                 // Remove player from user
@@ -48,7 +48,7 @@ class MarketSaleController extends Controller
                 // Mark player as not a free agent
                 $this->markPlayerFreeAgent($soldPlayer);
                   
-*/
+
                 return response()->json(['message' => 'Player sold successfully'], 200);
 
           }
