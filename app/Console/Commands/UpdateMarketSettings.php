@@ -112,18 +112,17 @@ class UpdateMarketSettings extends Command
         // Compare all bids received to keep older largest bid
         foreach ($bids as $bid) {
             if (isset($bid['biddingAmount']) && isset($bid['biddingClub']) && isset($bid['biddingDate'])) {
-                $playerId = $bid['player_id'];
                 $biddingClub = $bid['biddingClub'];
                 $biddingAmount = (int) $bid['biddingAmount'];
                 $biddingDate = Carbon::parse($bid['biddingDate']);
                 $user = User::where('userId', $biddingClub)->first();
                 if ($user) {
                     $username = $user->username;
-                }
+                };
                 $player = Player::where('id', $playerId)->first();
                 if ($player) {
                     $playerName = $player->short_name;
-                }
+                };
         
     
                 if ($winnerBid === null) {

@@ -23,11 +23,11 @@ class MarketSaleController extends Controller
         $user = User::where('userId', $sellingClub)->first();
         if ($user) {
             $username = $user->username;
-        }
+        };
         $player = Player::where('id', $playerId)->first();
         if ($player) {
             $playerName = $player->short_name;
-        }
+        };
 
 
 
