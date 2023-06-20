@@ -8,7 +8,7 @@ use App\Http\Controllers\PlayerPricesController;
 use App\Http\Controllers\MarketSettingsController;
 use App\Http\Controllers\MarketAuctionController;
 use App\Http\Controllers\MarketSaleController;
-
+use App\Http\Controllers\TransfersController;
 use App\Http\Controllers\UserController;
 
 Route::get('users', [UserController::class, 'index']);
@@ -39,6 +39,7 @@ Route::post('auction', [MarketAuctionController::class, 'store']);
 
 Route::post('sale', [MarketSaleController::class, 'store']);
 
+Route::get('transfers', [TransfersController::class, 'index']);
 
 
 
