@@ -118,7 +118,7 @@ class UpdateMarketSettings extends Command
                 $user = User::where('userId', $biddingClub)->first();
                 if ($user) {
                     $username = $user->username;
-                };
+                }
         
     
                 if ($winnerBid === null) {
