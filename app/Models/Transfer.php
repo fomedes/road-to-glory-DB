@@ -11,7 +11,8 @@ class Transfer extends Model
     protected $primaryKey = 'id';
     
     protected $fillable = [
-      'player_id', 
+      'player_id',
+      'player_name', 
       'club',
       'username', 
       'amount', 
