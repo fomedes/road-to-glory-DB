@@ -20,6 +20,11 @@ class MarketSaleController extends Controller
         $sellingClub = $request->input('selling_club');
         $sellingAmount = $request->input('selling_amount');
         $sellingDate = $request->input('selling_date');
+        $user = User::where('userId', $sellingClub)->first();
+        if ($user) {
+            $username = $user->username;
+        }
+
 
         $clubPlayers = DB::table('users')
         ->where('userId', $sellingClub)
@@ -33,6 +38,7 @@ class MarketSaleController extends Controller
                 $soldPlayer = [
                     'player_id' => $playerId,
                     'club' => $sellingClub,
+                    'username' => $username,
                     'amount' => $sellingAmount,
                     'date' => $sellingDate,
                     'move_type' => 'sale'
