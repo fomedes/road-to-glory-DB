@@ -53,7 +53,7 @@ class UpdateMarketSettings extends Command
             $start = Carbon::now('Europe/London');
             $end = Carbon::now('Europe/London');
             $settings->start_date = $start;
-            $settings->end_date = $end->addMinutes(1);
+            $settings->end_date = $end->addMinutes(2);
             $settings->save();
     
             return true;
@@ -189,31 +189,31 @@ class UpdateMarketSettings extends Command
     }
 
     private function updatePlayerCurrentClub($bid)
-{
-    $playerId = $bid['player_id'];
-    $biddingClub = $bid['club'];
+    {
+        $playerId = $bid['player_id'];
+        $biddingClub = $bid['club'];
 
-    $user = User::where('userId', $biddingClub)->first();
-    if ($user) {
-        $username = $user->username;
+        $user = User::where('userId', $biddingClub)->first();
+        if ($user) {
+            $username = $user->username;
+        }
+
+
+        $player = Player::find($playerId);
+        if ($player) {
+            $player->current_club = $username;
+            $player->save();
+        }
     }
 
+    private function markPlayerNotFreeAgent($bid)
+    {
+        $playerId = $bid['player_id'];
 
-    $player = Player::find($playerId);
-    if ($player) {
-        $player->current_club = $username;
-        $player->save();
+        $player = Player::find($playerId);
+        if ($player) {
+            $player->isFreeAgent = false;
+            $player->save();
+        }
     }
-}
-
-private function markPlayerNotFreeAgent($bid)
-{
-    $playerId = $bid['player_id'];
-
-    $player = Player::find($playerId);
-    if ($player) {
-        $player->isFreeAgent = false;
-        $player->save();
-    }
-}
 }
