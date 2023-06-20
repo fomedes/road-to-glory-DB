@@ -119,7 +119,7 @@ class UpdateMarketSettings extends Command
                 if ($user) {
                     $username = $user->username;
                 };
-                $player = Player::where('id', $playerId)->first();
+                $player = Player::where('id', 1179)->first();
                 if ($player) {
                     $playerName = $player->short_name;
                 };
