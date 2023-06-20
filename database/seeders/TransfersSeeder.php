@@ -17,6 +17,7 @@ class TransfersSeeder extends Seeder
     {
         Transfer::Create([
             'player_id' => 49486,
+            'player_name' => 'Bartholomew Ogbeche',
             'club' => 1,
             'username' => 'fomedes',
             'amount' => 1000000,

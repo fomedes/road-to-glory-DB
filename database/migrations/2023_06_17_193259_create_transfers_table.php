@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
             $table->integer('player_id');
+            $table->string('player_name');
             $table->string('club');
             $table->string('username');
             $table->unsignedInteger('amount');
