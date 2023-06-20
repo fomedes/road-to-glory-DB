@@ -119,10 +119,9 @@ class UpdateMarketSettings extends Command
                 if ($user) {
                     $username = $user->username;
                 };
-                $player = Player::where('id', $playerId)->first();
-                if ($player) {
-                    $playerName = $player->short_name;
-                };
+                $player = DB::table('player_db')
+                ->where('id', $playerId)
+                ->value('short_name');
         
     
                 if ($winnerBid === null) {
