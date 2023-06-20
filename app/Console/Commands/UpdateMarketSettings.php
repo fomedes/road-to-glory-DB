@@ -118,17 +118,12 @@ class UpdateMarketSettings extends Command
                 $user = User::where('userId', $biddingClub)->first();
                 if ($user) {
                     $username = $user->username;
-                };
-                $player = Player::where('id', 1179)->first();
-                if ($player) {
-                    $playerName = $player->short_name;
-                };
+                }
         
     
                 if ($winnerBid === null) {
                     $winnerBid = [
                         'player_id' => $playerId,
-                        'player_name' => $playerName,
                         'club' => $biddingClub,
                         'username' => $username,
                         'amount' => $biddingAmount,
@@ -141,7 +136,6 @@ class UpdateMarketSettings extends Command
                     if ($biddingAmount > $currentAmount) {
                         $winnerBid = [
                             'player_id' => $playerId,
-                            'player_name' => $playerName,
                             'club' => $biddingClub,
                             'username' => $username,
                             'amount' => $biddingAmount,
