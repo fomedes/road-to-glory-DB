@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('player_id');
             $table->string('club');
+            $table->string('username');
             $table->unsignedInteger('amount');
             $table->timestamp('date')->nullable();
             $table->string('move_type')->nullable();

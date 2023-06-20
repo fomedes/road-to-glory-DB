@@ -115,11 +115,17 @@ class UpdateMarketSettings extends Command
                 $biddingClub = $bid['biddingClub'];
                 $biddingAmount = (int) $bid['biddingAmount'];
                 $biddingDate = Carbon::parse($bid['biddingDate']);
+                $user = User::where('userId', $biddingClub)->first();
+                if ($user) {
+                    $username = $user->username;
+                }
+        
     
                 if ($winnerBid === null) {
                     $winnerBid = [
                         'player_id' => $playerId,
                         'club' => $biddingClub,
+                        'username' => $username,
                         'amount' => $biddingAmount,
                         'date' => $biddingDate,
                         'move_type' => 'purchase'
@@ -131,6 +137,7 @@ class UpdateMarketSettings extends Command
                         $winnerBid = [
                             'player_id' => $playerId,
                             'club' => $biddingClub,
+                            'username' => $username,
                             'amount' => $biddingAmount,
                             'date' => $biddingDate,
                             'move_type' => 'purchase'

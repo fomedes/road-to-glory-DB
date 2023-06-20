@@ -12,7 +12,8 @@ class Transfer extends Model
     
     protected $fillable = [
       'player_id', 
-      'club', 
+      'club',
+      'username', 
       'amount', 
       'date', 
       'move_type'
